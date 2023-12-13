@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="./assets/Styles/style.css" rel="stylesheet" type="text/css" />
+    <title>Read Connect Create</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-dark border-bottom border-bo" data-bs-theme="dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="search-container">
+                <input type="text" placeholder="Search" />
+                <button type="submit">
+                    <a href="#" id="search-icon" title="Search">
+                        <img src="./assets/images/search-icon.png" alt="Search Icon" />
+                    </a>
+                </button>
+            </div>
+            <div class="col-6 text-center">
+                <p class="navbar-text text-white mb-0">
+                    Welcome to Read, Connect, Create, a virtual hub for inspiring curious minds
+                    to discover the power of knowledge, wonders of reading, magic of bonding, and the joy of creating!
+                </p>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div class="menu-primary-container">
+                        <ul id="top-menu" class="menu">
+                            <li class="menu-item">
+                                <a href="./index.html">Home</a>
+                            </li>
+                            <li id="menu-item-17"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-17">
+                                <a href="About.html" aria-current="page">About</a>
+                            </li>
+                            <li id="menu-item-17"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-17">
+                                <a href="LearnMore.html" aria-current="page">Learn More</a>
+                            </li>
+                        </ul>
+                    </div>
+        </nav>
+        <img src="./assets/images/image1.png" class="img-fluid" alt="Reading" width="1400" height="200"
+            class="custom-header">
+        </nav>
+    </header>
+
+    <main class="container">
+        <section>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="./assets/images/Highland-park.jpg" alt="Highland Park in Autumn" />
+                    <div class="text">Capture an ephemeral yet breathtaking view!</div>
+                    <h1>Capture anephemeral yet everlasting memory!</h1>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="./assets/images/Learn-to-sew.png" alt="Learn how to sew" />
+                    <div class="text">Learn a new skill...</div>
+                    <h1>Learn a new skill..</h1>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="./assets/images/pick-raspberries.png" alt="Pick Raspberries" />
+                    <div class="text">Spend more time in the nature!</div>
+                    <h1>Spend more time in the nature!</h1>
+                </div>
+                <div>
+                    <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="moveSlides(1)">&#10095;</a>
+                </div>
+            </div>
+            <br>
+            <div style="text-align:right">
+                <span class="dot" onclick="currentSlide(1)" aria-label="Slide 1"></span>
+                <span class="dot" onclick="currentSlide(2)" aria-label="Slide 2"></span>
+                <span class="dot" onclick="currentSlide(3)" aria-label="Slide 3"></span>
+            </div>
+
+        </section>
+    </main>
+    <footer class="bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="card text-bg-dark mb-3" style="max-width: 50rem;">
+            <div class="card-footer"></div>
+            <h3 class="card-title">Have any questions/comments?</h3>
+            <h3>Send me an email and I will be happy to connect with you!</h3>
+            <i class="bi bi-envelope"></i>
+            <h4>faezeh.jahanshiri@gmail.com</h4>
+            <h3 class="card-title">Subscribe to my newsletter:</h3>
+            <input type="email" placeholder="Type Your Email Here" />
+            <button type="submit">Submit</button>
+        </div>
+        <p>© Faezeh Jahan 2023</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                console.log('showSlides function is running');
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 8000);
+            }
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
